@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css" />
   </head>
   <body>
-    <header>*** 블로그 입니다</header>
+    <header>
+      <p>*** 블로그 입니다</p>
+    </header>
     <nav>
       <ul>
         <li><a href="#">HOME</a></li>
@@ -16,14 +19,18 @@
     </nav>
     <article>
       <section>
-        <form action="">
-          <input type="text" placeholder="아이디" />
-          <input type="password" placeholder="비밀번호" />
+        <form action="" id="login">
+          <div id="login_main">
+            <input type="text" placeholder="아이디" />
+            <input type="password" placeholder="비밀번호" />
+          </div>
         </form>
       </section>
       <section>
-        <h2>안녕하세요!</h2>
-        <p>HTML 실습 과제입니다.</p>
+        <div id="hello">
+          <h2>안녕하세요!</h2>
+          <p>HTML 실습 과제입니다.</p>
+        </div>
       </section>
     </article>
     <footer>

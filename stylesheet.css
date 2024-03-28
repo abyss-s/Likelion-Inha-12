@@ -1,0 +1,65 @@
+header {
+  background-color: rgb(255, 192, 241);
+  text-align: center;
+  position: sticky;
+  top: 0px;
+  height: 30px;
+}
+header > p {
+  justify-content: center;
+  text-align: center;
+}
+nav {
+  background-color: black;
+  color: #ffffff;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: white;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+}
+ul > li {
+  float: left;
+  padding-right: 5px;
+}
+#login {
+  background-color: #fe6d3d;
+  height: 400px;
+}
+#login_main {
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#login_main > input {
+  margin-bottom: 10px;
+  width: 100px;
+  padding: 5px;
+}
+#hello {
+  background-color: #ffac07;
+  padding: 10px;
+  height: 400px;
+}
+#hello > h2 {
+  margin: 0 auto;
+}
+#hello > p {
+  margin: 0 auto;
+}
+footer {
+  background-color: hsl(97, 100%, 57%);
+  height: 50px;
+  display: flex;
+}
