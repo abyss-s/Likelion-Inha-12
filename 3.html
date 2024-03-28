@@ -7,34 +7,63 @@
     <style>
       #wrapper {
         width: 700px;
+        display: flex;
+      }
+      /* flex: column 적용하여 1,2/3,4로 그리드 나누기 */
+      #box-row1{
+        display: flex;
+        flex-direction: column;
+      }
+      #box-row2{
+        display: flex;
+        flex-direction: column;
       }
       .box {
         padding: 15px;
         color: #fff;
-        font-size: 20px;
+        font-size: 15px;
         font-weight: bold;
         text-align: center;
+        justify-content: center;
+        flex-direction: row;
       }
+      /* box에 너비와 높이를 추가해 리드미와 최대한 비슷하게 설정 */
       .box1 {
         background-color: #3689ff;
+        width: 400px;
+        height: 50px;
       }
       .box2 {
         background-color: #00cf12;
+        width: 200px;  
+        height: 170px;
+        float: left;
       }
       .box3 {
         background-color: #ff9019;
+        width: 200px;
+        height: 50px;
+        float: right;
       }
       .box4 {
         background-color: #ffd000;
+        width: 200px;
+        height: 170px;
+        float: right;
       }
     </style>
   </head>
   <body>
     <div id="wrapper">
-      <div class="box box1">box1</div>
-      <div class="box box2">box2</div>
-      <div class="box box3">box3</div>
-      <div class="box box4">box4</div>
+      <!--box들을 행 별로 구분하기 위한 div 태그 추가-->
+      <div id="box-row1">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+      </div>
+      <div id="box-row2">
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+      </div>
     </div>
   </body>
 </html>
