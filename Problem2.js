@@ -8,3 +8,6 @@ let lionMoney = {
   재혁: 2800,
   동재: 50000,
 };
+
+let sum = lionMoney.승인 + lionMoney.영주 + lionMoney.재혁 + lionMoney.동재;
+alert(sum);
