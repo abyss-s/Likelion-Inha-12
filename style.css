@@ -1,0 +1,84 @@
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+@font-face {
+  font-family: "TTLaundryGothicB";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2403-2@1.0/TTLaundryGothicB.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  /* 배경 설정 */
+  background: linear-gradient(rgb(241, 210, 255), skyBlue, rgb(249, 148, 222));
+  text-align: center;
+  justify-content: center;
+  font-family: Galmuri14;
+}
+
+img {
+  width: 250px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+.container {
+  /* 컨테이너 설정 */
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+header {
+  /* 헤더 설정 */
+  font-family: "TTLaundryGothicB";
+  font-size: larger;
+}
+
+header > .container > img {
+  width: 300px;
+  border-radius: 5%;
+}
+
+nav {
+  /* 네비게이션 바 설정 */
+  font-family: "TTLaundryGothicB";
+  font-size: large;
+  display: flex;
+}
+.nav_1 .nav_2{
+  border-width: thick;
+  border-style: dashed;
+  border-color: black;
+}
+
+.photo {
+  display: flex;
+  flex-direction: row;
+}
+
+footer {
+  /* 푸터 설정 */
+  font-family: Galmuri14;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  font-family: GalmuriMono9;
+}
