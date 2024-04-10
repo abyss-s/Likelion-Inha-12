@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Counter2 = () => {
   // 이벤트 핸들러부터 state까지 모두 스스로 작성해보시길 바랍니다!
