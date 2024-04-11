@@ -36,6 +36,11 @@ ul, li {
   list-style-type: none;
 }
 
+td {
+  padding-right: 30px;
+  text-align: left;
+}
+
 .container {
   /* 컨테이너 설정 */
   overflow: hidden;
