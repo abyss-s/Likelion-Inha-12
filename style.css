@@ -64,12 +64,22 @@ nav {
   /* 네비게이션 바 설정 */
   font-family: "TTLaundryGothicB";
   font-size: large;
-  display: flex;
+  position: fixed; /* 네비게이션 바를 고정합니다. */
+  top: 0; /* 화면 상단에 위치하도록 설정합니다. */
+  background-color: rgba(255, 255, 255, 0.777);
+  z-index: 1000; /* 다른 요소 위에 올라오도록 설정합니다. */
 }
-.nav_1 .nav_2 {
-  border-width: thick;
+#menu:hover{
+  color: blueviolet;
+}
+nav ul li { 
+  cursor: pointer; /* 네비게이션 바로가기 */
+  padding: 10px;
+}
+nav ul li a:hover {
+  color: rgb(248, 5, 106); 
   border-style: dashed;
-  border-color: black;
+  border-color: rgba(46, 119, 255, 0.811);
 }
 
 .slider-container {
