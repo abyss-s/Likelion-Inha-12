@@ -8,7 +8,7 @@ const Box = (props) => {
         backgroundColor: props.boxColor || "black",
       }}
     >
-      <p></p>
+      <p>{props.boxText}</p>
     </div>
   );
 };
