@@ -12,3 +12,7 @@
 .btn:hover {
   background-color: #1e40af;
 }
+
+.btn.clicked {
+  background-color: pink;
+}
