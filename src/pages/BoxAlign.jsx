@@ -3,10 +3,10 @@ import Box from "../components/Box/Box";
 const BoxAlign = () => {
   return (
     <div>
-      <Box />
-      <Box />
-      <Box />
-      <Box />
+      <Box boxColor="red"/>
+      <Box boxColor="blue"/>
+      <Box boxColor="green"/>
+      <Box boxColor="pink"/>
     </div>
   );
 };
