@@ -23,7 +23,8 @@ https://getbootstrap.com/docs/4.3/examples/album/
 
 (이곳에 구현한 이미지를 이곳에 첨부해주세요. 아래는 예시 이미지입니다.)
 
-![](https://velog.velcdn.com/images/wuzoo/post/509d4112-3edb-482d-82cb-89edf105a060/image.png)
+![1](src/assets/readme1.png)
+![2](src/assets/readme2.png)
 
 ## 구현 조건
 
@@ -33,6 +34,73 @@ https://getbootstrap.com/docs/4.3/examples/album/
 
 ## 컴포넌트 계층 구조
 
-주된 컴포넌트인 헤더, 푸터, 포토카드(사진과 글이 있는 것), 버튼에 대해 어떤 계층으로 설계했는지 이곳에 작성해주세요. 그리고 자식 컴포넌트 들에 대해서 어떤 의도를 갖고 설계했는지(ex 정렬하기 위해서, border를 주기 위해서 등) 부담없이 간단하게 적으면 됩니다. (아래는 예시입니다.)
+주된 컴포넌트인 헤더, 푸터, 포토카드(사진과 글이 있는 것), 버튼에 대해 어떤 계층으로 설계했는지 이곳에 작성해주세요. 그리고 자식 컴포넌트 들에 대해서 어떤 의도를 갖고 설계했는지(ex 정렬하기 위해서, border를 주기 위해서 등) 부담없이 간단하게 적으면 됩니다.  
 
-![](https://velog.velcdn.com/images/wuzoo/post/ab092dd4-595e-41ab-a850-85cab0c83e80/image.png)
+### Header
+맨 위쪽 고정된 짙은 회색의 헤더
+- HeaderContainer  
+기능: 모든 헤더 요소 담으면서 2개의 컨테이너를 양쪽에 배치(space-between),  
+스크롤 내려도 위쪽에 고정
+- HeaderLeft
+기능: 헤더 왼쪽 요소(앨범 아이콘, 텍스트)
+- HeaderRight
+기능: 헤더 오른쪽 요소(햄버거 바 버튼 담는 컨테이너)
+- HamburgerButton
+기능: 햄버거 바 버튼 상세 설정
+
+### Section
+페이지 메인에 들어오면 가장 먼저 보이는 부분.  
+큰 텍스트와 작은 텍스트, 그리고 2개의 버튼으로 구성되어 있다.
+- SectionContainer  
+기능: 섹션 요소를 담는 컨테이너, 가운데 정렬
+- SectionTitle
+기능: h1 글자 컨테이너 
+- SectionText
+기능: h3 글자 컨테이너 
+- Button
+기능: 버튼용 컴포넌트
+buttonColor, buttonText를 통해 색상 및 텍스트 커스텀
+
+### Card  
+포토카드 하나를 구성할 수 있는 컴포넌트  
+CardList에서 사용한다.
+- CardContainer
+기능: CardImage와 CardInfo 합치는 용도 컴포넌트
+- CardActions
+기능: CardInfo에서 버튼과 시간 정보만 배치하는 컨테이너.  
+space-between 처리: 텍스트 뻬고 flex 처리하기 위해
+- CardImage
+기능: 이미지 담기
+- CardInfo 
+기능: 카드 정보 박스(텍스트, 버튼, 시간 정보 담아야 한다.)
+- CardText
+기능: 카드 이미지 및 텍스트 정보
+- TimeInfo
+기능: 시간 정보
+- ButtonContainer
+기능: 버튼 설정을 위한 컨테이너로 CardButton에서 사용한다.
+- TimeInfoContainer
+기능: 시간 정보 담을 컨테이너
+- CardButton
+기능: 버튼 2개 담을 컨테이너(뷰+에딧)
+
+### CardList
+포토카드 여러 개를 갤러리 처럼 보여주는 컴포넌트  
+cardData 배열 안에 포토카드의 정보를 담을 수 있음.  
+map을 이용해 cards 컨테이너에 담고 리스트로 내보낸다. 
+imgSrc: 이미지 주소 정보, text: 이미지 텍스트 정보, timeInfo: 시간 정보
+- CardListContainer
+기능: flex wrap을 통해 3*3 모양으로 보여주기
+
+### Footer
+텍스트 링크 요소: text-decoration 옵션을 none으로 설정
+- FooterContainer
+기능: 모든 푸터 요소 담으면서 2개의 컨테이너를 양쪽에 배치
+- FooterLeftConainter
+기능: FooterLeft 담는 컨테이너, 왼쪽 배치
+- FooterRightConainter
+기능: FooterRight 담는 컨테이너, 오른쪽 배치
+- FooterLeft
+기능: 왼쪽 텍스트
+- FooterRight
+기능: 오른쪽 텍스트
