@@ -23,7 +23,7 @@ const HeaderLeft = styled.h1`
   align-items: center;
   font-size: 22px;
   color: white;
-  padding-left: 50px;
+  padding-left: 100px;
   font-size: 20px;
   font-weight: bolder;
 `;
@@ -33,7 +33,7 @@ const HeaderRight = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-  padding-right: 50px;
+  padding-right: 100px;
 `;
 
 const HamburgerButton = styled.div`

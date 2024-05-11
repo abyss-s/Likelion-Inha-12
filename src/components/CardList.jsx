@@ -5,10 +5,12 @@ import galaxyImg from "../assets/galaxy.jpg";
 
 // 카드리스트 컨테이너
 const CardListContainer = styled.div`
+  font-family: "Segoe UI", Arial, "Noto Sans";
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
+  background-color: #f1f1f18a;
 `;
 
 const CardList = () => {

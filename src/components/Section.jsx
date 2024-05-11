@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const SectionContainer = styled.div`
-  width: 0 auto;
+  font-family: "Segoe UI", Arial, "Noto Sans";
+  width: 100%;
   text-align: center;
-  margin: 100px 200px;
+  margin: 150px auto;
 `;
 
 // 섹션 큰 글자
@@ -19,12 +20,11 @@ const SectionTitle = styled.h1`
 const SectionText = styled.h3`
   color: #7a7a7a;
   font-weight: lighter;
+  font-size: 20px;
+  padding: 5px;
+  padding-bottom: 35px;
   align-content: center;
-`;
-
-// 버튼 컨테이너
-const ButtonContainer = styled.div`
-  margin-left: 10px;
+  margin: 0px 200px;
 `;
 
 // 버튼 컴포넌트: buttonColor, buttonText
@@ -32,17 +32,17 @@ const Button = (props) => {
   return (
     <button
       style={{
-        backgroundColor: props.buttonColor || lightgrey,
+        backgroundColor: props.buttonColor || "lightgrey",
         border: "none",
-        borderRadius: "7px",
-        fontSize: "14px",
-        paddingLeft: "10px",
-        paddingRight: "10px",
+        borderRadius: "5px",
+        fontSize: "16px",
+        padding: "10px 10px",
         color: "white",
         marginRight: "10px",
+        fontWeight: "lighter",
       }}
     >
-      <p>{props.buttonText}</p>
+      {props.buttonText}
     </button>
   );
 };
@@ -52,18 +52,15 @@ const Section = () => {
     <div>
       <SectionContainer>
         <SectionTitle>Album example</SectionTitle>
+
         <SectionText>
           Something short and leading about the collection below—its contents,
           the creator, etc. Make it short and sweet, but not too short so folks
           don’t simply skip over it entirely.
         </SectionText>
-        <ButtonContainer>
-          <Button
-            buttonText="Main call to action"
-            buttonColor="#007bff"
-          ></Button>
-          <Button buttonText="Secondary action" buttonColor="#6c757d"></Button>
-        </ButtonContainer>
+
+        <Button buttonText="Main call to action" buttonColor="#007bff"></Button>
+        <Button buttonText="Secondary action" buttonColor="#6c757d"></Button>
       </SectionContainer>
     </div>
   );

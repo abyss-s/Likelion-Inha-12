@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 // 카드 하나의 정보를 담을 컨테이너
 const CardContainer = styled.div`
-  width: 340px;
+  width: 320px;
   margin: 20px;
   background-color: white;
   border-radius: 5px;
@@ -22,7 +22,7 @@ const CardActions = styled.div`
 // 카드 이미지
 const CardImage = styled.img`
   width: 100%;
-  height: 200px;
+  height: 225px;
   object-fit: cover;
 `;
 
