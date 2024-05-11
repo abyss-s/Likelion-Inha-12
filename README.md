@@ -87,7 +87,7 @@ space-between 처리: 텍스트 뻬고 flex 처리하기 위해
 ### CardList
 포토카드 여러 개를 갤러리 처럼 보여주는 컴포넌트  
 cardData 배열 안에 포토카드의 정보를 담을 수 있음.  
-map을 이용해 cards 컨테이너에 담고 리스트로 내보낸다. 
+map을 이용해 cards 컨테이너에 담고 리스트로 내보낸다.  
 imgSrc: 이미지 주소 정보, text: 이미지 텍스트 정보, timeInfo: 시간 정보
 - CardListContainer
 기능: flex wrap을 통해 3*3 모양으로 보여주기
