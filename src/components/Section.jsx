@@ -27,6 +27,25 @@ const SectionText = styled.h3`
   margin: 0px 200px;
 `;
 
+const ButtonContainerStyle = styled.div`
+  button:hover {
+    filter: brightness(90%);
+  }
+`;
+
+const SectionButton = () => {
+  return (
+    <ButtonContainerStyle>
+      <Button buttonText="Main call to action" buttonColor="#007bff">
+        View
+      </Button>
+      <Button buttonText="Secondary action" buttonColor="#6c757d">
+        Edit
+      </Button>
+    </ButtonContainerStyle>
+  );
+};
+
 // 버튼 컴포넌트: buttonColor, buttonText
 const Button = (props) => {
   return (
@@ -52,15 +71,12 @@ const Section = () => {
     <div>
       <SectionContainer>
         <SectionTitle>Album example</SectionTitle>
-
         <SectionText>
           Something short and leading about the collection below—its contents,
           the creator, etc. Make it short and sweet, but not too short so folks
           don’t simply skip over it entirely.
         </SectionText>
-
-        <Button buttonText="Main call to action" buttonColor="#007bff"></Button>
-        <Button buttonText="Secondary action" buttonColor="#6c757d"></Button>
+        <SectionButton></SectionButton>
       </SectionContainer>
     </div>
   );

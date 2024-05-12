@@ -64,6 +64,10 @@ const ButtonContainer = styled.div`
     margin-left: 5px;
     margin-bottom: 5px;
   }
+  button:hover{
+    background-color: #7d7d7d;
+    color: #ffffff;
+  }
 `;
 
 // 시간 정보 컨테이너

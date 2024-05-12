@@ -50,7 +50,9 @@ https://getbootstrap.com/docs/4.3/examples/album/
 - `SectionContainer`: 섹션 요소를 담는 컨테이너, 가운데 정렬
 - `SectionTitle`: h1 글자 컨테이너 
 - `SectionText`: h3 글자 컨테이너 
-- `Button`: 버튼용 컴포넌트, buttonColor/buttonText를 통해 색상 및 텍스트 커스텀
+- `Button`: 버튼용 컴포넌트, buttonColor/buttonText를 통해 색상 및 텍스트 커스텀 가능
+- `ButtonContainerStyle`: 애니메이션 효과 지정(hover)
+- `SectionButton`: ButtonContainerStyle 사용, 색상 및 텍스트 실질적 지정
 
 ### Card  
 포토카드 하나를 구성할 수 있는 컴포넌트  
