@@ -7,6 +7,7 @@ const FooterContainer = styled.div`
   font-family: "Segoe UI", Arial, "Noto Sans";
   width: 100%;
   margin: 50px 50px;
+  color: #7d7d7d;
 `;
 
 const FooterLeftConainter = styled.div`
