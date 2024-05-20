@@ -2,9 +2,13 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const User = () => {
+  const { userId } = useParams();
+
+  return (
     <>
-        코드를 추가해주세요.
+      <h2>User name is {userId}</h2>
     </>
+  );
 };
 
 export default User;
