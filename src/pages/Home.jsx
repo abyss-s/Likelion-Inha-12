@@ -1,33 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Card from "../components/Card";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+`;
 
 const Home = () => {
-  const [userInfo, setUserInfo] = useState({
-    avatar: "",
-    eamil: "",
-    first_name: "",
-    id: 0,
-    last_name: "",
-  });
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`https://reqres.in/api/users/${1}`)
+      .get(`https://reqres.in/api/users?page=1&per_page=9`)
       .then((res) => {
-        setUserInfo(res.data.data);
+        setUsers(res.data.data);
       })
       .catch((e) => {
-        console.log(e);
+        console.error(e);
       });
   }, []);
+
+  const navigate = useNavigate();
+
+  const handleClick = (userId) => {
+    navigate(`/user/${userId}`);
+  };
 
   return (
     <>
       <h1>Main Page</h1>
-      <img src={userInfo.avatar} />
-      <h3>email: {userInfo.email}</h3>
-      <h3>{userInfo.first_name} {userInfo.last_name}</h3>
+      <Wrapper>
+        <>
+          {users.map((user) => (
+            <Card
+              key={user.id}
+              img={user.avatar}
+              name={`${user.first_name} ${user.last_name}`}
+              id={user.id}
+              onClick={() => handleClick(user.id)}
+            />
+          ))}
+          ;
+        </>
+      </Wrapper>
       <Link to="/menu">메뉴 페이지로 고고</Link>
     </>
   );
