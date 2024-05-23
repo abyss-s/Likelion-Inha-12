@@ -53,7 +53,7 @@ const Profile = () => {
 
   return (
     <>
-      <ProfileContainer class="container">
+      <ProfileContainer className="container">
         <ProfileImg src={inhalion} />
         <ProfileInfoContainer>
           <ProfileInfo
