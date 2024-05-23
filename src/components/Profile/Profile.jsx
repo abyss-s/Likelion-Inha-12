@@ -2,7 +2,7 @@ import "./Profile.css";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import inhalion from "../../assets/inhalion.png";
-import { AllImageCount } from "../../apis/article";
+import { AllImageCount } from "../../apis/gallery";
 
 // 프로필 컨테이너 (왼쪽 + 오른쪽 배치)
 const ProfileContainer = styled.div`

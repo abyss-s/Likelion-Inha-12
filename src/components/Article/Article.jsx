@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ArticleList } from "../../apis/article";
+import { ArticleList } from "../../apis/gallery";
 import styled from "styled-components";
+import Comment from "../Comment/Comment";
 
 // articleId 숫자 분리용 함수 (id = image + articleId)
 const getOnlyNumber = (str) => {
@@ -62,6 +63,7 @@ const Article = () => {
           <p>{article.imageText}</p>
           <img src={article.imageURL} alt={article.imageName} />
           {/* 댓글창 구현 필요 */}
+          <Comment/>
         </>
       ) : (
         <p>Loading...</p>

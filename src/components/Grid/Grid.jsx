@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ArticleList } from "../../apis/article";
+import { ArticleList } from "../../apis/gallery";
 import Card from "../Card/Card";
 import styled from "styled-components";
 
