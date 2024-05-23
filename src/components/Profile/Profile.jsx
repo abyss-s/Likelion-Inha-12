@@ -2,7 +2,7 @@ import "./Profile.css";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import inhalion from "../../assets/inhalion.png";
-import { ArticleList } from "../../apis/article";
+import { AllImageCount } from "../../apis/article";
 
 // 프로필 컨테이너 (왼쪽 + 오른쪽 배치)
 const ProfileContainer = styled.div`
@@ -43,11 +43,11 @@ const Profile = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // 비동기 함수를 통해 게시물 개수 카운트
     const articleCount = async () => {
-      const res = await ArticleList();
-      setCount(res.data.length);
+      const res = await AllImageCount();
+      setCount(res.data);
     };
+
     articleCount();
   }, []);
 
