@@ -1,9 +1,11 @@
 import axios from "axios";
 
+// 아티클 리스트 불러오기
 export const ArticleList = async () => {
   return await axios.get(`http://3.36.127.43:8080/imageAll`);
 };
 
+// 아티클(이미지) 총 개수 불러오기
 export const AllImageCount = async () => {
   return await axios.get(`http://3.36.127.43:8080/imageSize`);
 };
