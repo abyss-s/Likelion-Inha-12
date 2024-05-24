@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { PostComment, DeleteComment } from "../../apis/gallery";
 import Button from "../Button/Button";
 
+
 // 댓글창 컨테이너
 const CommentContainer = styled.div`
   width: 100%;
@@ -36,10 +37,9 @@ const CommentListMember = styled.li`
   justify-content: space-between;
   align-items: center;
   padding: 3px 0;
-  
 `;
 
-// 댓글 
+// 댓글
 const CommentText = styled.span`
   flex: 1;
   margin-right: 10px;
@@ -48,20 +48,20 @@ const CommentText = styled.span`
   }
 `;
 
-const Comment = ({ articleId, comments, handleComments }) => {
+const Comment = ({ articleId, comments, fetchComments }) => {
   const [comment, setComment] = useState("");
 
   // 댓글 작성
   const handleCommentInput = async () => {
     try {
-      // 예외처리: 공백 댓글 입력 불가 
+      // 예외처리: 공백 댓글 입력 불가
       if (comment.trim() === "") {
         alert("내용이 없는 댓글입니다.");
         return;
       }
       await PostComment(articleId, comment);
       setComment("");
-      handleComments();
+      fetchComments(); // 댓글 리스트 다시 불러오기
     } catch (err) {
       console.error(err);
     }
@@ -71,7 +71,7 @@ const Comment = ({ articleId, comments, handleComments }) => {
   const handleCommentDelete = async (commentId) => {
     try {
       await DeleteComment(articleId, commentId);
-      handleComments();
+      fetchComments(); // 댓글 리스트 다시 불러오기
     } catch (err) {
       console.error(err);
     }
@@ -88,19 +88,25 @@ const Comment = ({ articleId, comments, handleComments }) => {
           onChange={(e) => setComment(e.target.value)}
           placeholder="댓글 작성..."
         />
-        <Button btnText="게시" onClick={handleCommentInput} />
+        <Button
+          btnText="게시"
+          onClick={handleCommentInput}
+          backgroundColor="white"
+          color="blue"
+        />
       </CommentInputContainer>
       <CommentListContainer>
         {comments.map((comment) => (
           <CommentListMember key={comment.id}>
             <CommentText>
-              {" "}
               <strong>익명</strong>
               <span>{comment.commentBody}</span>
             </CommentText>
             <Button
               btnText="삭제"
               onClick={() => handleCommentDelete(comment.id)}
+              backgroundColor="white"
+              color="grey"
             />
           </CommentListMember>
         ))}

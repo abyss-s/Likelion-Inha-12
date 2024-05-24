@@ -7,7 +7,7 @@ import lion from "../assets/lion.png";
 const NotFoundContainer = styled.div`
   align-content: center;
   max-width: 1080px;
-  margin: 0 200px;
+  margin: 100px auto;
   padding: 50px;
   text-align: center;
   justify-content: center;
@@ -16,8 +16,8 @@ const NotFoundContainer = styled.div`
 
 const NotFoundLionImg = styled.img`
   width: 500px;
-  height: 500px;
-  margin: 30px 0;
+  height: auto;
+  margin: 10px auto;
 `;
 
 const NotFound = () => {
@@ -31,7 +31,12 @@ const NotFound = () => {
         <h3>멋쟁이 사자가 당신을 기다리고 있습니다</h3>
         <NotFoundLionImg src={lion} />
         <p>어흥...</p>
-        <Button btnText="뒤돌아서 도망가기" onClick={handleClick}></Button>
+        <Button
+          btnText="뒤돌아서 도망가기"
+          onClick={handleClick}
+          backgroundColor="blue"
+          color="white"
+        />
       </NotFoundContainer>
     </>
   );
