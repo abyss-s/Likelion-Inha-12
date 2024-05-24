@@ -6,10 +6,10 @@ import styled from "styled-components";
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 20px;
+  padding: 0 120px;
   justify-content: center;
+  margin: 0 auto;
 `;
-
 const Grid = () => {
   const [articleList, setArticleList] = useState([]);
 

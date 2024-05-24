@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 const CardContainer = styled.div`
   width: 100%;
-  max-width: 300px;
-  height: 380px;
-  margin: 20px;
+  max-width: 310px;
+  height: 400px;
+  margin: 10px auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
