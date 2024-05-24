@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { ArticleList } from "../../apis/gallery";
 import styled from "styled-components";
-import Comment from "../Comment/Comment";
+import CommentList from "../CommentList/CommentList";
 
 // articleId 숫자 분리용 함수 (id = image + articleId)
 const getOnlyNumber = (str) => {
@@ -31,9 +31,29 @@ const ArticleContainer = styled.div`
   }
 `;
 
+// 아티클 헤더: 제목(imageName) + 댓글 수(CommentCount) 합치는 컨테이너
+const ArticleHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+  }
+
+  span {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #666;
+  }
+`;
+
 const Article = () => {
   const { articleId } = useParams();
   const [article, setArticle] = useState(null);
+  const [commentCount, setCommentCount] = useState(0);
+  const navigate = useNavigate(); // 잘못된 articleId 접근 예외 처리 
 
   useEffect(() => {
     const goArticle = async () => {
@@ -47,26 +67,31 @@ const Article = () => {
         );
         if (articleData) {
           setArticle(articleData);
+        } else {
+          navigate("../pages/NotFound.jsx");
         }
       } catch (err) {
         console.error(err);
+        navigate("../pages/NotFound.jsx");
       }
     };
     goArticle();
-  }, [articleId]);
+  }, [articleId, navigate]);
 
   return (
     <ArticleContainer>
       {article ? (
         <>
-          <h1>{article.imageName}</h1>
+          <ArticleHeader>
+            <h2>{article.imageName}</h2>
+            <span>{`댓글 ${commentCount}개`}</span>
+          </ArticleHeader>
           <p>{article.imageText}</p>
           <img src={article.imageURL} alt={article.imageName} />
-          {/* 댓글창 구현 필요 */}
-          <Comment/>
+          <CommentList id={articleId} onCommentCount={setCommentCount} />
         </>
       ) : (
-        <p>Loading...</p>
+        <>{""}</>
       )}
     </ArticleContainer>
   );
