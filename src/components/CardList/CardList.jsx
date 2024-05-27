@@ -3,14 +3,23 @@ import { ArticleList } from "../../apis/gallery";
 import Card from "../Card/Card";
 import styled from "styled-components";
 
-const GridContainer = styled.div`
+const CardListContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 0 120px;
+  gap: 20px;
+  padding: 0 10px;
   justify-content: center;
   margin: 0 auto;
+  max-width: 1200px;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
 `;
-const Grid = () => {
+
+const CardList = () => {
   const [articleList, setArticleList] = useState([]);
 
   useEffect(() => {
@@ -24,20 +33,18 @@ const Grid = () => {
   }, []);
 
   return (
-    <>
-      <GridContainer>
-        {articleList.map((article) => (
-          <Card
-            key={article.id}
-            id={article.id}
-            title={article.imageName}
-            contents={article.imageText}
-            image={article.imageURL}
-          />
-        ))}
-      </GridContainer>
-    </>
+    <CardListContainer>
+      {articleList.map((article) => (
+        <Card
+          key={article.id}
+          id={article.id}
+          title={article.imageName}
+          contents={article.imageText}
+          image={article.imageURL}
+        />
+      ))}
+    </CardListContainer>
   );
 };
 
-export default Grid;
+export default CardList;
