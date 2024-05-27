@@ -4,13 +4,15 @@ import { useNavigate } from "react-router-dom";
 
 const CardContainer = styled.div`
   width: 100%;
-  max-width: 310px;
-  height: 400px;
-  margin: 10px auto;
+  margin: 15px auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   background-color: white;
+
+  @media (max-width: 768px) {
+    margin: 5px auto;
+  }
 `;
 
 const CardTitle = styled.h2`
@@ -19,10 +21,14 @@ const CardTitle = styled.h2`
   text-overflow: ellipsis;
   overflow: hidden;
   padding: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const CardImage = styled.img`
-  width: 100%;
+  width: 90%;
   height: auto;
 `;
 
@@ -32,6 +38,12 @@ const CardText = styled.div`
   overflow: hidden;
   color: gray;
   padding-left: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 `;
 
 const getOnlyNumber = (str) => {

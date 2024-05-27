@@ -1,4 +1,3 @@
-import "./Profile.css";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import inhalion from "../../assets/inhalion.png";
@@ -9,10 +8,14 @@ const ProfileContainer = styled.div`
   display: flex;
   padding: 20px;
   margin: 10px;
-  max-width: 1080px;
+  max-width: 1200px;
   justify-content: center;
   align-items: center;
   text-align: left;
+
+  @media (max-width: 768px) {
+    margin: 3px auto;
+  }
 `;
 
 // 메인 프로필 사진 스타일링 (왼쪽 배치)
